@@ -1,0 +1,12 @@
+<div class="card">
+  <%= link_to training.user.name+" のトレーニング", user_path(training.user_id), class: :card__user %>
+    <p class="card__summary">
+    <%= training.text %>
+    </p>
+  <div class="card__body">
+    <%= link_to training.parts_outline.name, training_path(training.user_id), class: :card__title %>
+    <%= link_to training.parts_detaile.name, training_path(training.user_id) %>
+    <%= training.weight %><%= " kg " %><%= training.number_of_times %><%= " Reps" %>
+  </div>
+  <%= link_to image_tag(training.image.variant(resize: '500x500'), class: :card__img ), training_path(training.user_id)  if training.image.attached?%>
+</div>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MuscleBuddy</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="header">
+
+      <div class="inner">
+        <div class="nav">
+          <div class="nav__left">
+            <%= link_to "MuscleBuddy", root_path, class: :logo %>
+          </div>
+          <div class="nav__right">
+              <%= link_to "本日のトレーニング", new_training_path, class: :nav__btn %>
+              <%= link_to "Nice Rep", root_path, class: :nav__logout %>
+              <%= link_to "My Rep", "/users/#{current_user.id}", class: :nav__btn %>
+          </div>
+        </div>
+      </div>
+    </header>
+    <%= yield %>
+  </body>
+</html>

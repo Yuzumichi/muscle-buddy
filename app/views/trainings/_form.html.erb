@@ -1,0 +1,45 @@
+<%= form_with(model: training, local: true) do |f|%>
+  <div class="items-detail">
+    <div class="weight-bold-text">商品の詳細</div>
+    <div class="form">
+      <div class="weight-bold-text">
+        パーツ
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.collection_select(:parts_outline_id, PartsOutline.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      <div class="weight-bold-text">
+        トレーニング内容
+      </div>
+      <%= f.collection_select(:parts_detaile_id, PartsDetaile.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :start_time, "トレーニング日時" %><br />
+    <%= f.date_field :start_time, id:"prototype_title" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :weight, "重さ (kg)" %><br />
+    <%= f.text_field :weight, class: :form__text, size: 30,  id:"prototype_catch_copy" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :number_of_times, "× Rep" %><br />
+    <%= f.number_field :number_of_times, class: :form__text, id:"prototype_concept" %>
+  </div>
+
+    <div class="field">
+    <%= f.label :text, "ツイート" %><br />
+    <%= f.text_area :text, class: :form__text, id:"prototype_concept" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image, "筋トレ画像" %><br />
+    <%= f.file_field :image, id:"prototype_image" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>

@@ -1,0 +1,8 @@
+<main class="main">
+  <div class="inner">
+    <% @trainings.each do |training| %>
+    <%= render partial: "training", locals:{training: training} %>
+    <% end %>
+  </div>
+
+</main>
