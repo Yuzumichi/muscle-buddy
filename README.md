@@ -17,8 +17,8 @@
 | column             | Type       | Options                        |
 | ------------------ | ---------- | -------------------------------|
 | parts_outline_id   | integer    | null: false                    |
-| parts_details_id    | integer    | null: false                    |
-| start_time          | datetime   | null: false                    |
+| parts_details_id   | integer    | null: false                    |
+| start_time         | datetime   | null: false                    |
 | weight             | integer    | null: false                    |
 | number_of_times    | integer    | null: false                    |
 | text               | text       | null: false                    |
@@ -32,9 +32,9 @@
 
 ## relationshipsテーブル
 
-| column        | Type       | Options                        |
-| ------------- | ---------- | -------------------------------|
-| user_id       | integer    | null: false, foreign_key: true |
+| column        | Type       | Options                                   |
+| ------------- | ---------- | ------------------------------------------|
+| user_id       | integer    | null: false, foreign_key: true            |
 | follow_id     | integer    | null: false,foreign_key:{to_table: users} |
 
 
